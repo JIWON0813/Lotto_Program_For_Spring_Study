@@ -13,16 +13,16 @@ import javax.persistence.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LottoNumber {
+public class LOTTO_NUMBER{
 
     @Id
-    public int Round;
+    public int ROUND;
 
-    public int Number1;
-    public int Number2;
-    public int Number3;
-    public int Number4;
-    public int Number5;
-    public int Number6;
-    public int Bonus;
+    public int NUMBER1;
+    public int NUMBER2;
+    public int NUMBER3;
+    public int NUMBER4;
+    public int NUMBER5;
+    public int NUMBER6;
+    public int BONUS;
 }

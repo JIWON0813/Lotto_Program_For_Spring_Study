@@ -4,10 +4,15 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import persnal.practice.lotto.Database.Repository.LottoNumberRepository;
 
 @Service
 public class UpdateNewLottoNumberService {
+
+    @Autowired
+    LottoNumberRepository lottoNumberRepository;
 
     public void insertNewLottoNumber(){
         StringBuilder url = new StringBuilder();
@@ -22,5 +27,13 @@ public class UpdateNewLottoNumberService {
         }
 
         Elements elements = document.select("[id=dwrNoList]");
+
+        int latestRoundinData = 1;
+        latestRoundinData = Integer.parseInt(GetLatestRound());
+
+    }
+
+    public String GetLatestRound(){
+        return lottoNumberRepository.getMaxRound();
     }
 }

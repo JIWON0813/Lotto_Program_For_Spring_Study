@@ -3,31 +3,55 @@ package persnal.practice.lotto.Database.Repository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import persnal.practice.lotto.Database.Entity.LottoNumber;
+import persnal.practice.lotto.Database.Entity.LOTTO_NUMBER;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import static org.junit.Assert.*;
 
 @Slf4j
 public class LottoNumberRepositoryTest {
 
+    private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/lotto?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul";
+    private static final String ID = "root";
+    private static final String PASSWORD = "1331";
+
     @Autowired
     private LottoNumberRepository lottoNumberRepository;
 
     @Test
+    public void testConnection() throws Exception{
+        Class.forName(DRIVER);
+
+        try(Connection connection = DriverManager.getConnection(URL,ID,PASSWORD)){
+            System.out.println(connection);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void create(){
-        LottoNumber lottoNumber =
-                LottoNumber.builder()
-                        .Round(1)
-                        .Number1(1)
-                        .Number2(2)
-                        .Number3(3)
-                        .Number4(4)
-                        .Number5(5)
-                        .Number6(6)
-                        .Bonus(7)
+        LOTTO_NUMBER lottoNumber =
+                LOTTO_NUMBER.builder()
+                        .ROUND(1)
+                        .NUMBER1(1)
+                        .NUMBER2(2)
+                        .NUMBER3(3)
+                        .NUMBER4(4)
+                        .NUMBER5(5)
+                        .NUMBER6(6)
+                        .BONUS(7)
                 .build();
 
-        LottoNumber newLotto = lottoNumberRepository.save(lottoNumber);
-        log.info(newLotto.toString());
+        LOTTO_NUMBER newLotto = lottoNumberRepository.save(lottoNumber);
+        //log.info(newLotto.toString());
+    }
+
+    @Test
+    public void GetLatestRound(){
+        System.out.println(lottoNumberRepository.getMaxRound());
     }
 }
