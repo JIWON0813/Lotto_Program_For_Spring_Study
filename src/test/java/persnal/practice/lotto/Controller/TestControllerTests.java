@@ -12,6 +12,19 @@ public class TestControllerTests {
     @Test
     public void creation(){
         TestController testController = new TestController();
-        assertThat(testController.getTset(), is("test"));
+        assertThat(testController.getTest(), is("test=success test"));
+    }
+
+    @Test
+    public void testGetHtml(){
+        TestController testController = new TestController();
+        assertThat(testController.getTestUrl(), is(""));
+    }
+
+    @Test
+    public void testGetLatestNum(){
+        TestController testController = new TestController();
+        HashMap<String,String> map = testController.getTestLatestNumber();
+        assertThat(map.get("result"), is("975"));
     }
 }

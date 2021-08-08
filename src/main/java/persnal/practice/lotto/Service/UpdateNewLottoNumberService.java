@@ -28,9 +28,14 @@ public class UpdateNewLottoNumberService {
 
         Elements elements = document.select("[id=dwrNoList]");
 
-        int latestRoundinData = 1;
-        latestRoundinData = Integer.parseInt(GetLatestRound());
+        int num = Integer.parseInt(elements.select("select option[selected]").text());
 
+        int latestRoundFromData = 1;
+        latestRoundFromData = Integer.parseInt(GetLatestRound());
+
+        for(int i = latestRoundFromData ; i < num ; i++){
+            //값 넣기
+        }
     }
 
     public String GetLatestRound(){
