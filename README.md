@@ -71,3 +71,20 @@ assertThat의 테스트값을 맞추는데 익숙하지 않았음
 스크래핑이 잘 되는지 테스트기 때문에 최신회차 값은 따로 하드코딩
 
 ![2-2](./image/2-2.JPG)
+
+<h1>3. StringBuilderPool 생성</h1>
+<h2>개발 목적</h2>
+1)StringBuilder를 사용하는데 메모리관리 위해 Pool로 만들어서 생성
+
+<h2>구현 목록</h2>
+1. StringBuilderPool 생성 (src -> java -> Core)
+
+<h2>느낀점</h2>
+C#에서 되는 문법들이 자바에서 안되는 경우가 많아 내부 구현 로직을 많이 찾아봄<br>
+만들고 나니 제대로 만들었는지 추후 검토 필요<br>
+공용 참조기 때문에 동기화를 해야함 mutex 사용을 더 알아보고 나중에 수정
+
+<h2>결과</h2>
+StringBuilder를 각 다른서비스에서 사용하려니<br>
+"Duplicated code fragment" 해당 warning 뜨는 중<br>
+이유를 자세히 알아보고 정확하게 수정해야할듯 효용성이 없는 Pool을 만들었을 수도 있음
