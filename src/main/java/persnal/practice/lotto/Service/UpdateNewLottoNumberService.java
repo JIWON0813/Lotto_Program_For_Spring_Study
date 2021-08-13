@@ -1,5 +1,6 @@
 package persnal.practice.lotto.Service;
 
+import Core.StringBuilderPool;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,8 +15,8 @@ public class UpdateNewLottoNumberService {
     @Autowired
     LottoNumberRepository lottoNumberRepository;
 
-    public void insertNewLottoNumber(){
-        StringBuilder url = new StringBuilder();
+    public void autoUpdateNewRound(){
+        StringBuilder url = StringBuilderPool.take();
         url.append("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=");
         String round = "";
         url.append(round);
@@ -31,11 +32,17 @@ public class UpdateNewLottoNumberService {
         int num = Integer.parseInt(elements.select("select option[selected]").text());
 
         int latestRoundFromData = 1;
-        latestRoundFromData = Integer.parseInt(GetLatestRound());
+        latestRoundFromData = Integer.parseInt(this.GetLatestRound());
 
         for(int i = latestRoundFromData ; i < num ; i++){
             //값 넣기
         }
+    }
+
+    public int insertLottoNumber(){
+        int result = 0;
+
+        return result;
     }
 
     public String GetLatestRound(){

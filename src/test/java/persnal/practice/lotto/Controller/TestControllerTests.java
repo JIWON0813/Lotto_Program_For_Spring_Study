@@ -20,11 +20,4 @@ public class TestControllerTests {
         TestController testController = new TestController();
         assertThat(testController.getTestUrl(), is(""));
     }
-
-    @Test
-    public void testGetLatestNum(){
-        TestController testController = new TestController();
-        HashMap<String,String> map = testController.getTestLatestNumber();
-        assertThat(map.get("result"), is("975"));
-    }
 }
