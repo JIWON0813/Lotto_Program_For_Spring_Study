@@ -7,26 +7,21 @@ import java.util.Queue;
 
 public class StringBuilderPool {
 
-    static Queue<StringBuilder> stringBuilders;
-    static int index = 0;
+    static Queue<StringBuilder> stringBuilders = new LinkedList<StringBuilder>();
 
     public StringBuilderPool(){
-    }
-
-    public StringBuilderPool(int capacity){
-        stringBuilders = new LinkedList<StringBuilder>();
-        for(int i = 0 ; i < capacity ; i++){
+        for(int i = 0 ; i < 10 ; i++){
             stringBuilders.add(new StringBuilder());
         }
     }
-
     public static synchronized StringBuilder take(){
         return stringBuilders.peek() != null ?stringBuilders.poll() : new StringBuilder();
     }
 
     public static String getString(StringBuilder stringBuilder){
         String result = stringBuilder.toString();
-        stringBuilders.add(stringBuilder.delete(0, stringBuilder.length()));
+        stringBuilder.setLength(0);
+        stringBuilders.add(stringBuilder);
         return result;
     }
 }

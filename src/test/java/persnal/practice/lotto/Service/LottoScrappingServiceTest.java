@@ -14,7 +14,7 @@ public class LottoScrappingServiceTest {
 
     @Test
     public void testGetLatestNum(){
-        HashMap<String,String> map = lottoScrappingService.getTestLatestNumber();
-        assertThat(map.get("result"), is("975"));
+        String number = lottoScrappingService.getLatestNumber();
+        assertThat(number, is("975"));
     }
 }

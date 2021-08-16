@@ -13,7 +13,6 @@ import java.util.HashMap;
 public class LottoScrappingService {
 
     public Document getLottoPage(){
-
         StringBuilder url = StringBuilderPool.take();
         url.append("https://www.dhlottery.co.kr/gameResult.do?method=byWin&drwNo=");
         String round = "";
@@ -28,24 +27,18 @@ public class LottoScrappingService {
         return document;
     }
 
-    public HashMap<String, String> getTestLatestNumber(){
-        HashMap<String, String> testMap = new HashMap<>();
-
-        StringBuilder url = new StringBuilder();
-        url.append("https://www.dhlottery.co.kr/gameResult.do?method=byWin");
-        Document document = null;
-        try {
-            document = Jsoup.connect(url.toString()).get();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public String getLatestNumber(){
+        Document document = this.getLottoPage();
 
         Elements elements = document.select("[id=dwrNoList]");
 
-        int num = Integer.parseInt(elements.select("select option[selected]").text());
+        String number = elements.select("select option[selected]").text();
 
-        testMap.put("result", String.valueOf(num));
+        return number;
+    }
 
-        return testMap;
+    public String[] getLottoNumberByRound(String round){
+
+        return null;
     }
 }
