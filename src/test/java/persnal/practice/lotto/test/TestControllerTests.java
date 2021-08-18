@@ -1,8 +1,7 @@
-package persnal.practice.lotto.Controller;
+package persnal.practice.lotto.test;
 
 import org.junit.Test;
-
-import java.util.HashMap;
+import persnal.practice.lotto.test.TestController;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;

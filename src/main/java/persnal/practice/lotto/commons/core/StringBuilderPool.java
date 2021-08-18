@@ -1,4 +1,4 @@
-package Core;
+package persnal.practice.lotto.commons.core;
 
 import org.springframework.cglib.core.Block;
 

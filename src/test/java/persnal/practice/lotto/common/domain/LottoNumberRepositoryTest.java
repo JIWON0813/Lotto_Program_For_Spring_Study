@@ -1,14 +1,13 @@
-package persnal.practice.lotto.Database.Repository;
+package persnal.practice.lotto.common.domain;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import persnal.practice.lotto.Database.Entity.LOTTO_NUMBER;
+import persnal.practice.lotto.commons.domain.LottoNumberRepository;
+import persnal.practice.lotto.commons.dto.LOTTO_NUMBER;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
-import static org.junit.Assert.*;
 
 @Slf4j
 public class LottoNumberRepositoryTest {

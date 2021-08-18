@@ -1,4 +1,4 @@
-package persnal.practice.lotto.Database.Entity;
+package persnal.practice.lotto.commons.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

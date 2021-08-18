@@ -1,13 +1,10 @@
-package persnal.practice.lotto.Service;
+package persnal.practice.lotto.scrapping.application;
 
-import Core.StringBuilderPool;
+import persnal.practice.lotto.commons.core.StringBuilderPool;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.HashMap;
 
 @Service
 public class LottoScrappingService {

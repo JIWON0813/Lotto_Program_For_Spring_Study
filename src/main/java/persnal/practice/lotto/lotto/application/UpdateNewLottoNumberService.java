@@ -1,16 +1,13 @@
-package persnal.practice.lotto.Service;
+package persnal.practice.lotto.lotto.application;
 
-import Core.StringBuilderPool;
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import persnal.practice.lotto.Database.Repository.LottoNumberRepository;
+import persnal.practice.lotto.commons.domain.LottoNumberRepository;
+import persnal.practice.lotto.scrapping.application.LottoScrappingService;
 
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 @Service
 public class UpdateNewLottoNumberService {

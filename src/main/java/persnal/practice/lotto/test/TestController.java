@@ -1,4 +1,4 @@
-package persnal.practice.lotto.Controller;
+package persnal.practice.lotto.test;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

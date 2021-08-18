@@ -1,9 +1,7 @@
-package persnal.practice.lotto.Service;
+package persnal.practice.lotto.scrapping.application;
 
 import org.junit.Test;
-import persnal.practice.lotto.Controller.TestController;
-
-import java.util.HashMap;
+import persnal.practice.lotto.scrapping.application.LottoScrappingService;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
