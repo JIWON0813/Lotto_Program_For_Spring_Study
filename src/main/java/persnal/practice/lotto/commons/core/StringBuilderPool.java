@@ -18,7 +18,7 @@ public class StringBuilderPool {
         return stringBuilders.peek() != null ?stringBuilders.poll() : new StringBuilder();
     }
 
-    public static String getString(StringBuilder stringBuilder){
+    public static synchronized String getString(StringBuilder stringBuilder){
         String result = stringBuilder.toString();
         stringBuilder.setLength(0);
         stringBuilders.add(stringBuilder);
