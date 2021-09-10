@@ -4,7 +4,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import persnal.practice.lotto.commons.domain.LottoNumberRepository;
+import persnal.practice.lotto.lotto.entity.LOTTO_NUMBER;
 import persnal.practice.lotto.scrapping.application.LottoScrappingService;
 
 import java.util.stream.IntStream;
@@ -35,10 +37,9 @@ public class UpdateNewLottoNumberService {
 
     }
 
-    public int insertLottoNumber(){
-        int result = 0;
-
-        return result;
+    @Transactional
+    public void insertLottoNumber(LOTTO_NUMBER lottoNumber){
+        lottoNumberRepository.save(lottoNumber);
     }
 
     public String GetLatestRound(){

@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import persnal.practice.lotto.commons.domain.LottoNumberRepository;
-import persnal.practice.lotto.commons.dto.LOTTO_NUMBER;
+import persnal.practice.lotto.lotto.entity.LOTTO_NUMBER;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,24 +29,6 @@ public class LottoNumberRepositoryTest {
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
-
-    @Test
-    public void create(){
-        LOTTO_NUMBER lottoNumber =
-                LOTTO_NUMBER.builder()
-                        .ROUND(1)
-                        .NUMBER1(1)
-                        .NUMBER2(2)
-                        .NUMBER3(3)
-                        .NUMBER4(4)
-                        .NUMBER5(5)
-                        .NUMBER6(6)
-                        .BONUS(7)
-                .build();
-
-        LOTTO_NUMBER newLotto = lottoNumberRepository.save(lottoNumber);
-        //log.info(newLotto.toString());
     }
 
     @Test
