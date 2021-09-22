@@ -49,11 +49,15 @@ public class LottoScrappingService {
         }
 
         Element winNumber = document.selectFirst("div[class=num win]");
-        Elements numbers = winNumber.select("span:contains(class/ball_645)");
+        Elements numbers = winNumber.select("span[class*=ball_645]");
         LinkedList<String> number = new LinkedList<>();
         numbers.forEach(element -> {
-            number.add(element.select("span:contains(class/ball_645)").text());
+            number.add(element.text());
         });
+
+        String bonusNumber = document.selectFirst("div[class=num bonus]").selectFirst("span[class*=ball_645]").text();
+
+        number.add(bonusNumber);
 
         return number;
     }
