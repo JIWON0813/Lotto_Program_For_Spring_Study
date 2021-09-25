@@ -3,12 +3,13 @@ package persnal.practice.lotto.lotto.application;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import persnal.practice.lotto.commons.domain.LottoNumberRepository;
-import persnal.practice.lotto.lotto.entity.LOTTO_NUMBER;
+import persnal.practice.lotto.lotto.domain.entity.LOTTO_NUMBER;
 import persnal.practice.lotto.scrapping.application.LottoScrappingService;
 
 import java.util.LinkedList;
@@ -58,6 +59,10 @@ public class UpdateNewLottoNumberService {
     }
 
     public String GetLatestRound(){
-        return lottoNumberRepository.getMaxRound();
+        String data = lottoNumberRepository.getMaxRound();
+        if(data == null){
+            data = "1";
+        }
+        return data;
     }
 }

@@ -2,7 +2,8 @@ package persnal.practice.lotto.commons.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import persnal.practice.lotto.lotto.entity.LOTTO_NUMBER;
+import org.springframework.stereotype.Repository;
+import persnal.practice.lotto.lotto.domain.entity.LOTTO_NUMBER;
 
 public interface LottoNumberRepository extends JpaRepository<LOTTO_NUMBER, Long> {
 

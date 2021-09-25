@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import persnal.practice.lotto.commons.domain.LottoNumberRepository;
-import persnal.practice.lotto.lotto.entity.LOTTO_NUMBER;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

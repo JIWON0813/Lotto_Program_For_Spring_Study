@@ -4,11 +4,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
 import persnal.practice.lotto.commons.domain.LottoNumberRepository;
-import persnal.practice.lotto.lotto.entity.LOTTO_NUMBER;
-
-import static org.junit.Assert.*;
+import persnal.practice.lotto.lotto.domain.entity.LOTTO_NUMBER;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UpdateNewLottoNumberServiceTests {
