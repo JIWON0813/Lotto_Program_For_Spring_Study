@@ -14,10 +14,4 @@ public class LottoApplication {
         SpringApplication.run(LottoApplication.class, args);
     }
 
-//    @Bean(name="entityManagerFactory")
-//    public LocalSessionFactoryBean sessionFactory() {
-//        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-//
-//        return sessionFactory;
-//    }
 }

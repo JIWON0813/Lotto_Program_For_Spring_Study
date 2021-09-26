@@ -40,13 +40,13 @@ public class UpdateNewLottoNumberService {
             LinkedList<String> listByRound = lottoScrappingService.getLottoNumberByRound(String.valueOf(num));
             LOTTO_NUMBER lottoNumberByRound = LOTTO_NUMBER.builder()
                                                             .ROUND(num)
-                                                            .NUMBER1(listByRound.indexOf(0))
-                                                            .NUMBER2(listByRound.indexOf(1))
-                                                            .NUMBER3(listByRound.indexOf(2))
-                                                            .NUMBER4(listByRound.indexOf(3))
-                                                            .NUMBER5(listByRound.indexOf(4))
-                                                            .NUMBER6(listByRound.indexOf(5))
-                                                            .BONUS(listByRound.indexOf(6))
+                                                            .NUMBER1(listByRound.get(0))
+                                                            .NUMBER2(listByRound.get(1))
+                                                            .NUMBER3(listByRound.get(2))
+                                                            .NUMBER4(listByRound.get(3))
+                                                            .NUMBER5(listByRound.get(4))
+                                                            .NUMBER6(listByRound.get(5))
+                                                            .BONUS(listByRound.get(6))
                                                             .build();
             this.insertLottoNumber(lottoNumberByRound);
         });

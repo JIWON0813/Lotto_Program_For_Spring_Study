@@ -20,11 +20,11 @@ public class LOTTO_NUMBER{
     @Id
     public int ROUND;
 
-    public int NUMBER1;
-    public int NUMBER2;
-    public int NUMBER3;
-    public int NUMBER4;
-    public int NUMBER5;
-    public int NUMBER6;
-    public int BONUS;
+    public String NUMBER1;
+    public String NUMBER2;
+    public String NUMBER3;
+    public String NUMBER4;
+    public String NUMBER5;
+    public String NUMBER6;
+    public String BONUS;
 }
